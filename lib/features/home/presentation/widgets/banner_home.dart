@@ -47,11 +47,7 @@ class BannerHome extends StatelessWidget {
         Positioned(
           right: 16.w,
           bottom: 0,
-          child: Image.asset(
-            AppAssets.imagesDocBanner,
-            height: 192.h,
-            width: 136.w,
-          ),
+          child: Image.asset(AppAssets.imagesDocBanner, height: 192.h),
         ),
       ],
     );
