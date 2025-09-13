@@ -31,6 +31,7 @@ dependencies:
   animated_snack_bar: ^0.4.0
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
+  date_picker_timeline: ^1.2.7
   dio: ^5.9.0
   flutter:
     sdk: flutter
@@ -42,6 +43,7 @@ dependencies:
   flutter_svg: ^2.2.1
   get_it: ^8.2.0
   google_fonts: ^6.3.1
+  intl: ^0.20.2
   pretty_dio_logger: ^1.4.0
   shared_preferences: ^2.5.3
   skeletonizer: ^2.1.0+1

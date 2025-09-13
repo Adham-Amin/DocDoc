@@ -1,3 +1,4 @@
+import 'package:docdoc/core/routes/app_routes.dart';
 import 'package:docdoc/core/widgets/custom_app_bar.dart';
 import 'package:docdoc/core/widgets/custom_button.dart';
 import 'package:docdoc/core/widgets/height_and_width.dart';
@@ -30,7 +31,16 @@ class DeoctorDetailsViewBody extends StatelessWidget {
           HeightBox(24),
           CustomTabBar(doctor: doctor),
           HeightBox(16),
-          CustomButton(onTap: () {}, title: 'Make An Appointment'),
+          CustomButton(
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                AppRoutes.appointmentView,
+                arguments: doctor.id,
+              );
+            },
+            title: 'Make An Appointment',
+          ),
           HeightBox(16),
         ],
       ),

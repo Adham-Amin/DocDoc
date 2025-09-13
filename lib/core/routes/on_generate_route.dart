@@ -1,4 +1,5 @@
 import 'package:docdoc/core/routes/app_routes.dart';
+import 'package:docdoc/features/appointment/presentation/view/appointment_view.dart';
 import 'package:docdoc/features/auth/presentation/views/login_view.dart';
 import 'package:docdoc/features/auth/presentation/views/register_view.dart';
 import 'package:docdoc/features/doctor_detatils/presentation/view/deoctor_details_view.dart';
@@ -44,6 +45,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (_) => RecommendedDoctorsView(
           doctors: settings.arguments as List<DoctorEntity>,
         ),
+      );
+    case AppRoutes.appointmentView:
+      return MaterialPageRoute(
+        builder: (_) => AppointmentView(doctorId: settings.arguments as int),
       );
     case AppRoutes.specialityView:
       return MaterialPageRoute(builder: (_) => SpecialityView());
