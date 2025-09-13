@@ -39,6 +39,12 @@ class DoctorsSpecialityList extends StatelessWidget {
                 itemBuilder: (context, index) => DoctorCard(
                   image: DoctorEntity.doctorImages[index],
                   doctor: DoctorEntity(
+                    phone: '0123456789',
+                    email: '',
+                    startTime: '8:00 AM',
+                    endTime: '5:00 PM',
+                    price: 100,
+                    address: '123 Main St, City, Country',
                     id: 1,
                     name: 'Dr. Randy Wigham',
                     speciality: 'General',

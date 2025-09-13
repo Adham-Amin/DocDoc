@@ -86,6 +86,12 @@ class DoctorResponse {
       speciality: specialization?.name ?? '',
       city: city?.name ?? '',
       governrate: city?.governrate?.name ?? '',
+      phone: phone ?? '',
+      email: email ?? '',
+      address: address ?? '',
+      startTime: startTime ?? '',
+      endTime: endTime ?? '',
+      price: appointPrice ?? 0,
     );
   }
 }

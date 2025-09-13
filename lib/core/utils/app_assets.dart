@@ -78,6 +78,18 @@ class AppAssets {
   /// assets/images/Radiology.png
   static const String imagesRadiology = "assets/images/Radiology.png";
 
+  /// Assets for imagesReviewOne
+  /// assets/images/review_one.png
+  static const String imagesReviewOne = "assets/images/review_one.png";
+
+  /// Assets for imagesReviewThree
+  /// assets/images/review_three.png
+  static const String imagesReviewThree = "assets/images/review_three.png";
+
+  /// Assets for imagesReviewTwo
+  /// assets/images/review_two.png
+  static const String imagesReviewTwo = "assets/images/review_two.png";
+
   /// Assets for imagesSplash
   /// assets/images/splash.png
   static const String imagesSplash = "assets/images/splash.png";

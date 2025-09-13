@@ -64,6 +64,12 @@ class RecommendDoctorsSection extends StatelessWidget {
                   itemBuilder: (context, index) => DoctorCard(
                     image: DoctorEntity.doctorImages[index],
                     doctor: DoctorEntity(
+                      phone: '0000000000',
+                      email: 'V7dM6@example.com',
+                      address: 'address',
+                      startTime: '00:00',
+                      endTime: '00:00',
+                      price: 0,
                       id: 1,
                       name: 'Dr. Randy Wigham',
                       speciality: 'General',

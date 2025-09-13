@@ -7,8 +7,20 @@ class DoctorEntity {
   final String city;
   final String degree;
   final String governrate;
+  final String address;
+  final String phone;
+  final String email;
+  final String startTime;
+  final String endTime;
+  final num price;
 
   DoctorEntity({
+    required this.address,
+    required this.phone,
+    required this.email,
+    required this.startTime,
+    required this.endTime,
+    required this.price,
     required this.id,
     required this.name,
     required this.speciality,

@@ -1,6 +1,7 @@
 import 'package:docdoc/core/routes/app_routes.dart';
 import 'package:docdoc/features/auth/presentation/views/login_view.dart';
 import 'package:docdoc/features/auth/presentation/views/register_view.dart';
+import 'package:docdoc/features/doctor_detatils/presentation/view/deoctor_details_view.dart';
 import 'package:docdoc/features/home/domain/entities/doctor_entity.dart';
 import 'package:docdoc/features/home/presentation/views/home_view.dart';
 import 'package:docdoc/features/home/presentation/views/recommended_doctors_view.dart';
@@ -25,6 +26,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (_) => DoctorsSpecialityView(
           title: arguments['title'],
           specialityId: arguments['id'],
+        ),
+      );
+    case AppRoutes.doctorDetailsView:
+      final arguments = settings.arguments as Map<String, dynamic>;
+      return MaterialPageRoute(
+        builder: (_) => DeoctorDetailsView(
+          doctor: arguments['doctor'],
+          image: arguments['image'],
         ),
       );
     case AppRoutes.recommendedDoctorsView:
