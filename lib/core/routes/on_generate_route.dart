@@ -8,6 +8,7 @@ import 'package:docdoc/features/home/presentation/views/recommended_doctors_view
 import 'package:docdoc/features/onbording/presentation/view/onbording_view.dart';
 import 'package:docdoc/features/speciality/presentation/views/doctors_speciality_view.dart';
 import 'package:docdoc/features/speciality/presentation/views/speciality_view.dart';
+import 'package:docdoc/main_view.dart';
 import 'package:flutter/material.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -18,6 +19,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => LoginView());
     case AppRoutes.registerView:
       return MaterialPageRoute(builder: (_) => RegisterView());
+    case AppRoutes.mainView:
+      return MaterialPageRoute(builder: (_) => MainView());
     case AppRoutes.homeView:
       return MaterialPageRoute(builder: (_) => HomeView());
     case AppRoutes.doctorsSpecialityView:

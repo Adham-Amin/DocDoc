@@ -8,7 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SpecialityViewBody extends StatelessWidget {
-  const SpecialityViewBody({super.key});
+  const SpecialityViewBody({super.key, this.isNavigate});
+
+  final bool? isNavigate;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,10 @@ class SpecialityViewBody extends StatelessWidget {
         HeightBox(16),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: CustomAppBar(title: 'Doctor Speciality'),
+          child: CustomAppBar(
+            title: 'Doctor Speciality',
+            isNavigate: isNavigate,
+          ),
         ),
         HeightBox(32),
         Expanded(

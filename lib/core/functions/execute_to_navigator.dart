@@ -6,5 +6,5 @@ String executeToNavigator() {
   final user = Prefs.getUser();
 
   if (!seenOnboarding) return AppRoutes.onbordingView;
-  return user != null ? AppRoutes.homeView : AppRoutes.loginView;
+  return user != null ? AppRoutes.mainView : AppRoutes.loginView;
 }
