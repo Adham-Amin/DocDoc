@@ -14,6 +14,7 @@ void main() async {
   await Prefs.init();
   await serverLocator();
   Bloc.observer = CustomObserverBloc();
+  await ScreenUtil.ensureScreenSize();
   runApp(const DocDoc());
 }
 

@@ -1,4 +1,5 @@
 import 'package:docdoc/core/routes/app_routes.dart';
+import 'package:docdoc/features/appointment/presentation/view/appointment_details_view.dart';
 import 'package:docdoc/features/appointment/presentation/view/appointment_view.dart';
 import 'package:docdoc/features/auth/presentation/views/login_view.dart';
 import 'package:docdoc/features/auth/presentation/views/register_view.dart';
@@ -47,8 +48,17 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         ),
       );
     case AppRoutes.appointmentView:
+      final arguments = settings.arguments as Map<String, dynamic>;
       return MaterialPageRoute(
-        builder: (_) => AppointmentView(doctorId: settings.arguments as int),
+        builder: (_) => AppointmentView(
+          doctorId: arguments['doctorId'],
+          image: arguments['image'],
+        ),
+      );
+    case AppRoutes.appointmentDetailsView:
+      return MaterialPageRoute(
+        builder: (_) =>
+            AppointmentDetailsView(image: settings.arguments as String),
       );
     case AppRoutes.specialityView:
       return MaterialPageRoute(builder: (_) => SpecialityView());

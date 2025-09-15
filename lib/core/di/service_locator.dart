@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:docdoc/core/services/api_service.dart';
+import 'package:docdoc/features/appointment/data/data_source/appointment_remote_data_source.dart';
+import 'package:docdoc/features/appointment/data/repos/appointment_repo_impl.dart';
+import 'package:docdoc/features/appointment/domain/repos/appointment_repo.dart';
 import 'package:docdoc/features/auth/data/data_source/remote_auth_data_source.dart';
 import 'package:docdoc/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:docdoc/features/auth/domain/repos/auth_repo.dart';
@@ -36,6 +39,16 @@ Future<void> serverLocator() async {
   getIt.registerLazySingleton<SpecialityRepo>(
     () => SpecialityRepoImpl(
       specialityRemoteDataSource: getIt<SpecialityRemoteDataSource>(),
+    ),
+  );
+
+  getIt.registerLazySingleton<AppointmentRemoteDataSource>(
+    () => AppointmentRemoteDataSourceImpl(apiService: getIt<ApiService>()),
+  );
+
+  getIt.registerLazySingleton<AppointmentRepo>(
+    () => AppointmentRepoImpl(
+      appointmentRemoteDataSource: getIt<AppointmentRemoteDataSource>(),
     ),
   );
 }

@@ -6,21 +6,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DoctorCard extends StatelessWidget {
-  const DoctorCard({super.key, required this.doctor, required this.image});
+  const DoctorCard({
+    super.key,
+    required this.doctor,
+    required this.image,
+    this.navigate,
+  });
 
   final DoctorEntity doctor;
   final String image;
+  final bool? navigate;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(
-          context,
-          AppRoutes.doctorDetailsView,
-          arguments: {'doctor': doctor, 'image': image},
-        );
-      },
+      onTap: navigate == null
+          ? () {
+              Navigator.pushNamed(
+                context,
+                AppRoutes.doctorDetailsView,
+                arguments: {'doctor': doctor, 'image': image},
+              );
+            }
+          : null,
       child: Row(
         children: [
           ClipRRect(

@@ -36,7 +36,7 @@ class DeoctorDetailsViewBody extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 AppRoutes.appointmentView,
-                arguments: doctor.id,
+                arguments: {'doctorId': doctor.id, 'image': image},
               );
             },
             title: 'Make An Appointment',
