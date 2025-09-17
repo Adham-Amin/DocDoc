@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,6 +16,8 @@ void main() async {
   await serverLocator();
   Bloc.observer = CustomObserverBloc();
   await ScreenUtil.ensureScreenSize();
+  await Hive.initFlutter();
+  await Hive.openBox<String>('searchHistory');
   runApp(const DocDoc());
 }
 

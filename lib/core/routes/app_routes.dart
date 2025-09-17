@@ -10,4 +10,5 @@ abstract class AppRoutes {
   static const String doctorDetailsView = '/doctorDetailsView';
   static const String appointmentView = '/appointmentView';
   static const String appointmentDetailsView = '/appointmentDetailsView';
+  static const String searchView = '/searchView';
 }
