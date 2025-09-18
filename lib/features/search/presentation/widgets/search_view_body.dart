@@ -65,7 +65,9 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                   if (controller.text.isEmpty) {
                     return RecentSearchSection(
                       onChanged: (query) {
+                        context.read<SearchCubit>().search(query: query);
                         controller.text = query;
+                        setState(() {});
                       },
                     );
                   }

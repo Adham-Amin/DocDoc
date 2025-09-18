@@ -40,6 +40,10 @@ class ProfileViewBody extends StatelessWidget {
                     ),
                     HeightBox(24),
                     CustomListTile(
+                      onTap: () => Navigator.pushNamed(
+                        context,
+                        AppRoutes.personalInfoView,
+                      ),
                       title: 'Personal Information',
                       icon: Icons.person,
                       color: Color(0xff247CFF),

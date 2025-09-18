@@ -11,4 +11,6 @@ abstract class AppRoutes {
   static const String appointmentView = '/appointmentView';
   static const String appointmentDetailsView = '/appointmentDetailsView';
   static const String searchView = '/searchView';
+  static const String personalInfoView = '/personalInfoView';
+  static const String profileView = '/profileView';
 }

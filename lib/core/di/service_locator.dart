@@ -9,6 +9,9 @@ import 'package:docdoc/features/auth/domain/repos/auth_repo.dart';
 import 'package:docdoc/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:docdoc/features/home/data/repos/home_repo_impl.dart';
 import 'package:docdoc/features/home/domain/repos/home_repo.dart';
+import 'package:docdoc/features/personal_info/data/data_source/remote_personal_data_source.dart';
+import 'package:docdoc/features/personal_info/data/repos/personal_repo_impl.dart';
+import 'package:docdoc/features/personal_info/domain/repo/personal_repo.dart';
 import 'package:docdoc/features/search/data/data_source/remote_search_data_source.dart';
 import 'package:docdoc/features/search/data/repo/search_repo_impl.dart';
 import 'package:docdoc/features/search/domain/repo/search_repo.dart';
@@ -62,5 +65,14 @@ Future<void> serverLocator() async {
   getIt.registerLazySingleton<SearchRepo>(
     () =>
         SearchRepoImpl(remoteSearchDataSource: getIt<RemoteSearchDataSource>()),
+  );
+
+  getIt.registerLazySingleton<RemotePersonalDataSource>(
+    () => RemotePersonalDataSourceImpl(apiService: getIt<ApiService>()),
+  );
+
+  getIt.registerLazySingleton<PersonalRepo>(
+    () =>
+        PersonalRepoImpl(personalDataSource: getIt<RemotePersonalDataSource>()),
   );
 }
