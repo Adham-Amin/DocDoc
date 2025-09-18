@@ -41,6 +41,13 @@ class RecommendDoctorsSection extends StatelessWidget {
         BlocBuilder<HomeCubit, HomeState>(
           builder: (context, state) {
             if (state is HomeError) {
+              state.message == 'Unauthorized'
+                  ? Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      AppRoutes.loginView,
+                      (route) => false,
+                    )
+                  : null;
               return Center(child: Text(state.message));
             } else if (state is HomeLoaded) {
               return ListView.separated(

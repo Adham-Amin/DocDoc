@@ -49,6 +49,10 @@ class ProfileViewBody extends StatelessWidget {
                       color: Color(0xff247CFF),
                     ),
                     CustomListTile(
+                      onTap: () => Navigator.pushNamed(
+                        context,
+                        AppRoutes.myAppointmentView,
+                      ),
                       title: 'My Appointments',
                       icon: Icons.event_note,
                       color: Color(0xff22C55E),

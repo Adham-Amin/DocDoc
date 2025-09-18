@@ -7,6 +7,7 @@ import 'package:docdoc/features/doctor_detatils/presentation/view/deoctor_detail
 import 'package:docdoc/features/home/domain/entities/doctor_entity.dart';
 import 'package:docdoc/features/home/presentation/views/home_view.dart';
 import 'package:docdoc/features/home/presentation/views/recommended_doctors_view.dart';
+import 'package:docdoc/features/my_appointment/presentation/views/my_appointment_view.dart';
 import 'package:docdoc/features/onbording/presentation/view/onbording_view.dart';
 import 'package:docdoc/features/personal_info/presentation/views/personal_view.dart';
 import 'package:docdoc/features/profile/presentation/views/profile_view.dart';
@@ -22,6 +23,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => OnbordingView());
     case AppRoutes.loginView:
       return MaterialPageRoute(builder: (_) => LoginView());
+    case AppRoutes.myAppointmentView:
+      return MaterialPageRoute(builder: (_) => MyAppointmentView());
     case AppRoutes.registerView:
       return MaterialPageRoute(builder: (_) => RegisterView());
     case AppRoutes.mainView:
