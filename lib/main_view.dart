@@ -1,5 +1,6 @@
 import 'package:docdoc/core/utils/app_colors.dart';
 import 'package:docdoc/features/home/presentation/views/home_view.dart';
+import 'package:docdoc/features/profile/presentation/views/profile_view.dart';
 import 'package:docdoc/features/search/presentation/views/search_view.dart';
 import 'package:docdoc/features/speciality/presentation/views/speciality_view.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MainViewState extends State<MainView> {
     HomeView(),
     SearchView(),
     SpecialityView(isNavigate: false),
-    Center(child: Text('Profile View')),
+    ProfileView(),
   ];
 
   @override

@@ -36,7 +36,7 @@ class RegisterViewBody extends StatelessWidget {
           );
           Navigator.pushNamedAndRemoveUntil(
             context,
-            AppRoutes.homeView,
+            AppRoutes.mainView,
             (route) => false,
           );
         } else if (state is RegisterError) {
