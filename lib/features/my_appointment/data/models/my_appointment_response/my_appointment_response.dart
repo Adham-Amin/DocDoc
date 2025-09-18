@@ -1,3 +1,5 @@
+import 'package:docdoc/features/my_appointment/domain/entities/my_appointment_entity.dart';
+
 import 'doctor.dart';
 import 'patient.dart';
 
@@ -49,4 +51,11 @@ class MyAppointmentResponse {
     'notes': notes,
     'appointment_price': appointmentPrice,
   };
+
+  MyAppointmentEntity toEntity() => MyAppointmentEntity(
+    name: doctor!.name ?? '',
+    speciality: doctor!.specialization!.name ?? '',
+    degree: doctor!.degree ?? '',
+    time: appointmentTime ?? '',
+  );
 }

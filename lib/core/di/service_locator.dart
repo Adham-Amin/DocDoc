@@ -9,6 +9,9 @@ import 'package:docdoc/features/auth/domain/repos/auth_repo.dart';
 import 'package:docdoc/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:docdoc/features/home/data/repos/home_repo_impl.dart';
 import 'package:docdoc/features/home/domain/repos/home_repo.dart';
+import 'package:docdoc/features/my_appointment/data/data_source/remote_my_appointment_data_sourve.dart';
+import 'package:docdoc/features/my_appointment/data/repos/my_appointment_repo_impl.dart';
+import 'package:docdoc/features/my_appointment/domain/repo/my_appointment_repo.dart';
 import 'package:docdoc/features/personal_info/data/data_source/remote_personal_data_source.dart';
 import 'package:docdoc/features/personal_info/data/repos/personal_repo_impl.dart';
 import 'package:docdoc/features/personal_info/domain/repo/personal_repo.dart';
@@ -74,5 +77,15 @@ Future<void> serverLocator() async {
   getIt.registerLazySingleton<PersonalRepo>(
     () =>
         PersonalRepoImpl(personalDataSource: getIt<RemotePersonalDataSource>()),
+  );
+
+  getIt.registerLazySingleton<RemoteMyAppointmentDataSource>(
+    () => RemoteMyAppointmentDataSourveImpl(apiService: getIt<ApiService>()),
+  );
+
+  getIt.registerLazySingleton<MyAppointmentRepo>(
+    () => MyAppointmentRepoImpl(
+      remoteMyAppointmentDataSource: getIt<RemoteMyAppointmentDataSource>(),
+    ),
   );
 }

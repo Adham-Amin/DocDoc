@@ -17,7 +17,11 @@ class ProfileViewBody extends StatelessWidget {
     return Column(
       children: [
         HeightBox(16),
-        CustomAppBar(title: 'Profile', isNavigate: false),
+        CustomAppBar(
+          title: 'Profile',
+          isNavigate: false,
+          color: AppColors.white,
+        ),
         HeightBox(100),
         Expanded(
           child: Stack(

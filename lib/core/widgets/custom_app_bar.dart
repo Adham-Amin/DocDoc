@@ -9,11 +9,13 @@ class CustomAppBar extends StatelessWidget {
     this.actions,
     required this.title,
     this.isNavigate,
+    this.color,
   });
 
   final Widget? actions;
   final String title;
   final bool? isNavigate;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class CustomAppBar extends StatelessWidget {
                 ),
               )
             : WidthBox(24),
-        Text(title, style: AppStyles.textSemiBold18),
+        Text(title, style: AppStyles.textSemiBold18.copyWith(color: color)),
         actions != null
             ? GestureDetector(onTap: () {}, child: actions)
             : WidthBox(24),
